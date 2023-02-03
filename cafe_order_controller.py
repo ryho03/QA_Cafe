@@ -25,7 +25,10 @@ def runApp():
         choice = int(input("Please choose an option from the menu: "))
         if choice == 1:
             create_order(drink_name="", customer="", size="", quantity=0)
+        reorder_drink = int(input("Would you like to order another drink? 1. Yes (NOT IN USE) 2. No: "))
+        if reorder_drink == 2:
+            appRun = False
+        return appRun
 
 
 runApp()
-# print(cafe_order_service.getAll())

@@ -42,8 +42,10 @@ def create_order(drink_name, customer, size, quantity):
             c_o_run = False
         elif choice == 6:
             c_o_run = False
+            return
         else:
-            return "The option you selected is invalid, please retry: "
+            print("The option you selected is invalid, please retry: ")
+            d_o_run = False
 
     d_o_run = True
 
@@ -59,12 +61,12 @@ def create_order(drink_name, customer, size, quantity):
             size = "LAR"
             d_o_run = False
         else:
-            return "The option you selected is invalid, please retry: "
+            print("The option you selected is invalid, please retry: ")
 
     quantity = int(input("How many would you like? "))
     customer = input("What is your name? ")
-    order = Order(drink_name, str(customer), size, quantity)
-    print(order)
+    print(drink_name, customer, size, quantity)
+    Order(drink_name=drink_name, customer=customer, size=size, quantity=quantity)
+    # order = Order(drink_name, str(customer), size, quantity)
+    print(Order)
     return Order
-
-
