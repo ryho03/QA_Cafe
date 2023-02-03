@@ -17,6 +17,8 @@ def runApp():
         4. Update an existing order (NOT IN USE)
         5. Delete an order (NOT IN USE)
         6. Delete all orders (NOT IN USE)
+        7. Update drinks menu
+        8. Update price list (NOT IN USE)
         """
     )
     appRun = True
@@ -25,6 +27,8 @@ def runApp():
         choice = int(input("Please choose an option from the menu: "))
         if choice == 1:
             create_order(drink_name="", customer="", size="", quantity=0)
+        if choice == 7:
+            insertDrinksMenu()
         reorder_drink = int(input("Would you like to order another drink? 1. Yes (NOT IN USE) 2. No: "))
         if reorder_drink == 2:
             appRun = False
