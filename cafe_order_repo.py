@@ -10,20 +10,11 @@ def setupConn(qacafedb_db):
     return conn
 
 
-def createTable(qacafedb_db):
+def createTable(self, qacafedb_db):
     sql_file = open("qacafe.sql")
     sql_string = sql_file.read()
     cursor = setupConn(qacafedb_db).cursor()
     cursor.executescript(sql_string)
-
-
-def insertDrinksMenu():
-    newDrink_name = input("Please enter new drink: ")
-    newDrink_size = input("Please enter a size for pricing (SMA, MED, LAR): ")
-    newDrink_price = float(input("Please enter a price: "))
-    drink_query = f"INSERT INTO drink_menu (drink_name, drink_price, drink_size) VALUES ('{newDrink_name}', '{newDrink_price}', '{newDrink_size}');"
-    cursor.execute(drink_query)
-    return True
 
 
 class Order:
@@ -33,3 +24,9 @@ class Order:
         self.size = size
         self.quantity = quantity
 
+
+class Drinks:
+    def __init__(self, n_drink_name, n_drink_size, n_drink_price):
+        self.nDrinkName = n_drink_name
+        self.nDrinkSize = n_drink_size
+        self.nDrinkPrice = n_drink_price

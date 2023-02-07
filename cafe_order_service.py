@@ -70,3 +70,13 @@ def create_order(drink_name, customer, size, quantity):
     # order = Order(drink_name, str(customer), size, quantity)
     print(Order)
     return Order
+
+
+def insertDrinksMenu(self):
+    newDrink_name = input("Please enter new drink: ")
+    newDrink_size = input("Please enter a size for pricing (SMA, MED, LAR): ")
+    newDrink_price = float(input("Please enter a price: "))
+    drink_query = f"INSERT INTO drink_menu (drink_name, drink_price, drink_size) VALUES ('{newDrink_name}', '{newDrink_price}', '{newDrink_size}');"
+    self.cursor.execute(drink_query)
+    Drinks(n_drink_name=newDrink_name, n_drink_size=newDrink_size, n_drink_price=newDrink_price)
+    return True
